@@ -12,7 +12,7 @@ export const BooksProvider = (props) => {
     }])
 
     return (
-       <BooksContext.Provider value={'Desire'}>
+       <BooksContext.Provider value={[books, SetBooks]}>
            {props.children}
        </BooksContext.Provider>
     )
