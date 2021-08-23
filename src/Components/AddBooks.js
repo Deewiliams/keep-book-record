@@ -19,9 +19,9 @@ const AddBooks = () => {
         setBooks(prevbooks => [...prevbooks,{name:update.name,date:update.date,time:update.time}])
     }
     return (
-        <div className="border-2 w-2/5  m-4">
+        <div className="border-2  border-gray-400 w-72 lg:w-2/5 m-auto mt-10">
         <form className="m-2 grid gap-2 p-2" onSubmit={AddBooks}>
-            <input className="placeholder-gray-500 p-2 border-2 rounded-lg placeholder-opacity-100 ..." 
+            <input className="placeholder-gray-500 bg-white p-2 border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline rounded placeholder-opacity-100 ..." 
             placeholder="Book Name"
             type="text"
             name="name"
@@ -29,7 +29,7 @@ const AddBooks = () => {
             onChange={handleChange}
             />
 
-            <input className="placeholder-gray-500 p-2 border-2 rounded-lg placeholder-opacity-100 ..." 
+            <input className="placeholder-gray-500 bg-white p-2 border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline rounded placeholder-opacity-100 ..." 
             placeholder="Enter Date"
             type="date"
             name="date"
@@ -37,7 +37,7 @@ const AddBooks = () => {
             onChange={handleChange}
             />
 
-            <input className="placeholder-gray-500 p-2 border-2 rounded-lg placeholder-opacity-100 ..." 
+            <input className="placeholder-gray-500 bg-white p-2 border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 shadow leading-tight focus:outline-none focus:shadow-outline rounded placeholder-opacity-100 ..." 
             placeholder="Time to read the book"
             type="text"
             name="time"

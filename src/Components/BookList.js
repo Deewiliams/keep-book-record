@@ -1,21 +1,18 @@
-import React, {useContext} from 'react'
-import { BooksContext } from './BooksContext'
+import React, { useContext } from "react";
+import { BooksContext } from "./BooksContext";
+import Books from "./Books";
 
 const BookList = () => {
-    const [books, SetBooks] = useContext(BooksContext);
-    return (
-        <div>
-            {
-                books.map(book => (
-                <div key={book.id}>
-                   <h1>{book.name}</h1>
-                   <h1>{book.date}</h1>
-                   <h1>{book.time}</h1>
-                   </div>
-                ))
-            }
+  const [books, SetBooks] = useContext(BooksContext);
+  return (
+    <div>
+      {books.map((book) => (
+        <div className="border-2 w-2/5 m-auto mt-10 shadow-lg" key={book.id}>
+          <Books name={book.name} date={book.date} time={book.time} />
         </div>
-    )
-}
+      ))}
+    </div>
+  );
+};
 
-export default BookList
+export default BookList;
