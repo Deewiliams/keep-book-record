@@ -7,8 +7,8 @@ const initialState = {
     time: ""
 };
 const AddBooks = () => {
-    const [update, setUpdate] = useState (initialState)
-    const [books, setBooks] = useContext(BooksContext)
+    const [update, setUpdate] = useState (initialState);
+    const [books, setBooks] = useContext(BooksContext);
 
     function handleChange (event) {
         setUpdate({...update,[event.target.name]:event.target.value});
@@ -19,8 +19,9 @@ const AddBooks = () => {
         setBooks(prevbooks => [...prevbooks,{name:update.name,date:update.date,time:update.time}])
     }
     return (
-        <form onSubmit={AddBooks}>
-            <input className="placeholder-gray-500 placeholder-opacity-100 ..." 
+        <div className="border-2 w-2/5  m-4">
+        <form className="m-2 grid gap-2 p-2" onSubmit={AddBooks}>
+            <input className="placeholder-gray-500 p-2 border-2 rounded-lg placeholder-opacity-100 ..." 
             placeholder="Book Name"
             type="text"
             name="name"
@@ -28,7 +29,7 @@ const AddBooks = () => {
             onChange={handleChange}
             />
 
-            <input className="placeholder-gray-500 placeholder-opacity-100 ..." 
+            <input className="placeholder-gray-500 p-2 border-2 rounded-lg placeholder-opacity-100 ..." 
             placeholder="Enter Date"
             type="date"
             name="date"
@@ -36,15 +37,16 @@ const AddBooks = () => {
             onChange={handleChange}
             />
 
-            <input className="placeholder-gray-500 placeholder-opacity-100 ..." 
+            <input className="placeholder-gray-500 p-2 border-2 rounded-lg placeholder-opacity-100 ..." 
             placeholder="Time to read the book"
             type="text"
             name="time"
             value={update.time}
             onChange={handleChange}
             />
-            <button>submit</button>
+            <button className="bg-blue-700 rounded-lg h-8 w-2/5 text-gray-100 m-auto">submit</button>
         </form>
+        </div>
     )
 }
 
