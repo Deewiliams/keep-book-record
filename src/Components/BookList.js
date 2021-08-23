@@ -1,22 +1,19 @@
-import React, {useState} from 'react'
-// import Books from './Books'
+import React, {useContext} from 'react'
+import { BooksContext } from './BooksContext'
 
 const BookList = () => {
-    const [books, SetBooks] = useState([{
-        name: 'Little Bear',
-        date: '2021.09.5',
-        time: '11:00',
-        id: 1
-    }])
+    const value = useContext(BooksContext)
+
+  
 
     return (
         <div>
-            <h1>hello books</h1>
-            {
+            <h1>{value}</h1>
+            {/* {
                 books.map(book => (
                    <h1>{book.name}</h1>
                 ))
-            }
+            } */}
         </div>
     )
 }
